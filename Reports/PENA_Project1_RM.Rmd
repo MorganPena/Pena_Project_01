@@ -1,0 +1,40 @@
+---
+title: "Project_1"
+author: "Morgan Pena"
+date: "2022-10-10"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r Library and reading in data,message=FALSE}
+library(tidyverse)
+library(table1)
+
+df <- read_csv('../DataRaw/lead-iq-01.csv')
+```
+
+```{r }
+boxplot(IQ~Smelter,data=df, main="Children's IQ Levels by Smelter Location Status",
+   xlab="Distence From Smelter", ylab="IQ Levels")
+table1(~ IQ | Smelter, data = df)
+```
+
+This bar graph shows the average IQ levels of kids that are with in one mile of
+the lead-emitting ore smelter "near" or more then one mile away from lead-emitting 
+ore smelter "far'. The table is showing the mean and standard deviation of IQ 
+scores for children near and far from smelter as well as medium, maxiumum and
+minimum IQ scores for each group.
+
+```{r, include=FALSE}
+near <- df %>% filter(Smelter == "Near")
+far <- df %>% filter(Smelter == "Far")
+
+near.mean <- round(mean(near$IQ),2)
+far.mean <- round(mean(far$IQ),2)
+```
+
+The mean IQ level for children within one mile of the smelters is `r near.mean` 
+and the average IQ level for children outside of one mile of the smelters is `r far.mean`.
