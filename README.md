@@ -2,17 +2,18 @@
 Project 1 BIOS 6621
 
 Subdirectories
-Background 
+
+Background -
 Will have background information for the project such as papers and write up.
 
-Code
+Code -
 Will have the code for the project.
 
-Reports 
+Reports -
 Will have reports made through the code.
 
-DataProcessed
+DataProcessed -
 Will have 
 
-DataRaw
+DataRaw -
 Will have the raw data for the project.
