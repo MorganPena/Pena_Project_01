@@ -17,6 +17,7 @@ df <- read_csv('../DataRaw/lead-iq-01.csv')
 ```
 
 ```{r }
+df["IQ"][df["IQ"] == 999] <- 99
 boxplot(IQ~Smelter,data=df, main="Children's IQ Levels by Smelter Location Status",
    xlab="Distence From Smelter", ylab="IQ Levels")
 table1(~ IQ | Smelter, data = df)
